@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  nodereddocker:
+    container_name: node-red-dev
+    image: steineey/node-red
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports: 
+      - "1880:1880"
+    volumes: 
+      - "node-red-dev:/data"
+
+volumes:
+  node-red-dev:
